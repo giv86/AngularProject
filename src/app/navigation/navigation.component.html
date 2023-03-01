@@ -1,0 +1,22 @@
+<header>
+  <div *ngIf="!State.IsAdmin" class="navigation">
+    <ul>
+      <li><a href="#"><i class="fas fa-home nav-item"></i> HOME</a></li>
+      <li><a href="#"><i class="fas fa-gamepad nav-item"></i> GRA</a></li>
+      <li><a href="#"><i class="fas fa-users nav-item"></i> BOHATEROWIE</a></li>
+      <li><a href="#"><i class="fas fa-cog nav-item"></i> USTAWIENIA</a></li>
+    </ul>
+  </div>
+  <div *ngIf="State.IsAdmin" class="navigation admin">
+    <ul>
+      <li><a href="#"><i class="fas fa-home nav-item"></i> HOME</a></li>
+      <li><a href="#"><i class="fas fa-users nav-item"></i> UŻYTKOWNICY</a></li>
+      <li><a href="#"><i class="fas fa-map-marker-alt nav-item"></i> LOKACJE</a></li>
+      <li><a href="#"><i class="fas fa-comments nav-item"></i> DIALOGI</a></li>
+      <li><a href="#"><i class="fas fa-cog nav-item"></i> USTAWIENIA</a></li>
+    </ul>
+  </div>
+  <div class="logout">
+    <a href="#"><i class="fas fa-sign-out-alt nav-item"></i> WYLOGUJ</a>
+  </div>
+</header>

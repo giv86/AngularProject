@@ -1,0 +1,12 @@
+{
+  "include": [
+    "../Models/*.cs"
+  ],
+  "exclude": [],
+  "namespace": null,
+  "output": "src/model/apitypes.ts",
+  "camelCase": false,
+  "numericEnums": false,
+  "stringLiteralTypesInsteadOfEnums": false,
+  "customTypeTranslations": {}
+}

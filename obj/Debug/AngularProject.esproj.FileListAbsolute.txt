@@ -1,0 +1,2 @@
+C:\Users\Zygmunt\Desktop\Application\Application\Nawia\AngularProject\obj\Debug\AngularProject.esproj.SuggestedBindingRedirects.cache
+C:\Users\Zygmunt\Desktop\Application\Application\Nawia\AngularProject\obj\Debug\AngularProject.esproj.CoreCompileInputs.cache

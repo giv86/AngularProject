@@ -1,0 +1,29 @@
+<div class="amiga-theme text-align: center;">
+  <pre>
+
+███▄▄▄▄      ▄████████  ▄█     █▄   ▄█     ▄████████
+███▀▀▀██▄   ███    ███ ███     ███ ███    ███    ███
+███   ███   ███    ███ ███     ███ ███▌   ███    ███
+███   ███   ███    ███ ███     ███ ███▌   ███    ███
+███   ███ ▀███████████ ███     ███ ███▌ ▀███████████
+███   ███   ███    ███ ███     ███ ███    ███    ███
+███   ███   ███    ███ ███ ▄█▄ ███ ███    ███    ███
+ ▀█   █▀    ███    █▀   ▀███▀███▀  █▀     ███    █▀
+
+Cień snów przebrzmiałych
+</pre>
+  <form class="form-group-account" autocomplete="off">
+    <table class="table-borderless">
+      <tr>
+        <th><label for="email">EMAIL:</label></th>
+        <th class="ml-1"><input type="email" id="email" name="email" required></th>
+      </tr>
+      <tr>
+        <th><label for="password">PASSWORD:</label></th>
+        <th><input type="password" id="password" name="password" required></th>
+      </tr>
+    </table>
+    <a type="submit" (click)="Login()">LOGIN</a>
+  </form>
+  <p>Don't have an account? <a [routerLink]="['/register']">REGISTER</a></p>
+</div>
