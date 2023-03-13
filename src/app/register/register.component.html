@@ -1,30 +1,23 @@
 <div class="amiga-theme">
-  <pre>
-
-███▄▄▄▄      ▄████████  ▄█     █▄   ▄█     ▄████████
-███▀▀▀██▄   ███    ███ ███     ███ ███    ███    ███
-███   ███   ███    ███ ███     ███ ███▌   ███    ███
-███   ███   ███    ███ ███     ███ ███▌   ███    ███
-███   ███ ▀███████████ ███     ███ ███▌ ▀███████████
-███   ███   ███    ███ ███     ███ ███    ███    ███
-███   ███   ███    ███ ███ ▄█▄ ███ ███    ███    ███
- ▀█   █▀    ███    █▀   ▀███▀███▀  █▀     ███    █▀
-
-Cień snów przebrzmiałych
-</pre>
   <form class="form-group-account" autocomplete="off">
     <table class="table-borderless">
       <tr>
         <th><label for="email">EMAIL:</label></th>
-        <th><input type="email" id="email" name="email" required></th>
+        <th><input type="email" id="email" name="email" [(ngModel)]="register_req.Email" required></th>
       </tr>
       <tr>
         <th><label for="password">PASSWORD:</label></th>
-        <th><input type="password" id="password" name="password" required></th>
+        <th><input type="password" id="password" name="password" [(ngModel)]="register_req.Password" required></th>
       </tr>
       <tr>
-        <th><label for="password">CONFIRM PASSWORD:</label></th>
-        <th><input type="password" id="password_confirmation" name="password_confirmation" required></th>
+        <th><label for="is_admin">ACCOUNT TYPE:</label></th>
+        <th>
+          <input type="radio" id="user_type_user" name="is_admin" value="false" [(ngModel)]="register_req.IsAdmin"
+            checked>
+          <label for="user_type_user">User</label>
+          <input type="radio" id="user_type_admin" name="is_admin" value="true" [(ngModel)]="register_req.IsAdmin">
+          <label for="user_type_admin">Admin</label>
+        </th>
       </tr>
     </table>
     <a type="submit" (click)="Register()">REGISTER</a>

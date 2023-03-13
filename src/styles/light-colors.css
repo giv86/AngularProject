@@ -1,0 +1,29 @@
+:root {
+  --primary-color: #0077cc;
+  --secondary-color: #999999;
+  --background-color: #f2f2f2;
+  --text-color: #333333;
+  --link-color: #0077cc;
+  --link-hover-color: #005daa;
+  --button-color: #0077cc;
+  --button-text-color: #fff;
+  --button-hover-color: #005daa;
+  --heading-font-family: 'Roboto', sans-serif;
+  --body-font-family: 'Open Sans', sans-serif;
+  --heading-font-weight: 700;
+  --body-font-weight: 400;
+  --heading-line-height: 1.2;
+  --body-line-height: 1.5;
+  --heading-letter-spacing: .05em;
+  --body-letter-spacing: normal;
+  --heading-font-size-xl: 2.5rem;
+  --heading-font-size-lg: 2rem;
+  --heading-font-size-md: 1.5rem;
+  --heading-font-size-sm: 1.25rem;
+  --heading-font-size-xs: 1rem;
+  --body-font-size-xl: 1.25rem;
+  --body-font-size-lg: 1.125rem;
+  --body-font-size-md: 1rem;
+  --body-font-size-sm: .875rem;
+  --body-font-size-xs: .75rem
+}

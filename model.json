@@ -1,6 +1,6 @@
 {
   "include": [
-    "../Models/*.cs"
+    "../Models/**/*.cs"
   ],
   "exclude": [],
   "namespace": null,

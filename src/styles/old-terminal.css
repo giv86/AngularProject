@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=VT323&display=swap");
+
+body {
+  background-color: black !important;
+  color: #797979;
+  font-family: VT323, monospace
+}
+
+div.amiga-theme {
+  font-family: VT323, monospace;
+  background-color: black;
+  color: #797979;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10px
+}
+
+form {
+  margin: 0 auto;
+  max-width: 500px
+}
+
+button,
+input[type="submit"] {
+  background-color: #000;
+  color: #41a541;
+  border-bottom: #41a541;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+  display: block;
+  text-decoration: underline
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  display: block;
+  width: 100px
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  border: none;
+  border-bottom: 1px solid #41a541 !important;
+  padding: 10px 10px;
+  outline: none;
+  color: #41a541 !important;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  background-color: #000 !important
+}
+
+textarea {
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  background-color: #41a541;
+  color: #797979
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #41a541
+}

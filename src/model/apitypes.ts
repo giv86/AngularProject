@@ -1,222 +1,173 @@
-// ..\Models\ActionsToConversation.cs
-export interface ActionsToConversation extends BaseDictionary {
+// ..\Models\JwsSettings.cs
+export interface JwsSettings {
 }
 
-// ..\Models\ActionsToDialogues.cs
-export interface ActionsToDialogues extends BaseDictionary {
+// ..\Models\Dbos\DboActions.cs
+export interface DBOActions extends DboBaseModel<IdTypeOFActions> {
+  Name: string;
+  FirstDescription: string;
+  SecondDescription: string;
+  ModelName: ModelName;
+  AvailableAction: AvailableActions;
+  TargetId: number;
 }
 
-// ..\Models\ActionsToLocation.cs
-export interface ActionsToLocation extends BaseDictionary {
+// ..\Models\Dbos\DboBaseModel.cs
+export interface DboBaseModel<T> {
+  Id: T;
+  CreatedAt: string;
+  UpdatedAt: string;
 }
 
-// ..\Models\BaseDictionary.cs
-export interface BaseDictionary {
-    DictionaryId: number;
-    From: number;
-    To: number;
+// ..\Models\Dbos\DboConversations.cs
+export interface DBOConversations extends DboBaseModel<IdTypeOFConversation> {
+  Name: string;
+  Description: string;
+  CanBeReused: boolean;
+  HasBeenUsed: boolean;
 }
 
-// ..\Models\ConversationsToLocation.cs
-export interface ConversationsToLocation extends BaseDictionary {
+// ..\Models\Dbos\DboDialogues.cs
+export interface DBODialogues extends DboBaseModel<IdTypeOFDialogue> {
+  Text: string;
+  CanBeReused: boolean;
+  HasBeenUsed: boolean;
 }
 
-// ..\Models\DBOActions.cs
-export interface DBOActions extends DBOBaseModel<IdTypeOFActions> {
-    Name: string;
-    FirstDescription: string;
-    SecondDescription: string;
-    ModelName: ModelName;
-    AvailableAction: AvailableActions;
-    TargetId: number;
-}
-
-// ..\Models\DBOBaseModel.cs
-export interface DBOBaseModel<T> {
-    Id: T;
-    CreatedAt: string;
-    UpdatedAt: string;
-}
-
-// ..\Models\DBOConversations.cs
-export interface DBOConversations extends DBOBaseModel<IdTypeOFConversation> {
-    Name: string;
-    Description: string;
-    CanBeReused: boolean;
-    HasBeenUsed: boolean;
-}
-
-// ..\Models\DBODialogues.cs
-export interface DBODialogues extends DBOBaseModel<IdTypeOFDialogue> {
-    Text: string;
-    CanBeReused: boolean;
-    HasBeenUsed: boolean;
-}
-
-// ..\Models\DBOEnums.cs
+// ..\Models\Dbos\DboEnums.cs
 export enum IdTypeOFUser {
 }
 
-// ..\Models\DBOEnums.cs
+// ..\Models\Dbos\DboEnums.cs
 export enum IdTypeOFLocation {
 }
 
-// ..\Models\DBOEnums.cs
+// ..\Models\Dbos\DboEnums.cs
 export enum IdTypeOFConversation {
 }
 
-// ..\Models\DBOEnums.cs
+// ..\Models\Dbos\DboEnums.cs
 export enum IdTypeOFDialogue {
 }
 
-// ..\Models\DBOEnums.cs
+// ..\Models\Dbos\DboEnums.cs
 export enum IdTypeOFActions {
 }
 
-// ..\Models\DBOEnums.cs
+// ..\Models\Dbos\DboEnums.cs
 export enum IdTypeOFHero {
 }
 
-// ..\Models\DBOEnums.cs
+// ..\Models\Dbos\DboEnums.cs
 export enum AvailableActions {
-    WalkTo = 'WalkTo',
-    LookAt = 'LookAt',
-    Open = 'Open',
-    Move = 'Move',
-    Consume = 'Consume',
-    PickUp = 'PickUp',
-    Close = 'Close',
-    Use = 'Use',
-    TalkTo = 'TalkTo',
-    Remove = 'Remove',
-    Wear = 'Wear',
-    Give = 'Give',
-    Fight = 'Fight',
-    Dodge = 'Dodge',
-    Run = 'Run',
+  WalkTo = 'WalkTo',
+  LookAt = 'LookAt',
+  Open = 'Open',
+  Move = 'Move',
+  Consume = 'Consume',
+  PickUp = 'PickUp',
+  Close = 'Close',
+  Use = 'Use',
+  TalkTo = 'TalkTo',
+  Remove = 'Remove',
+  Wear = 'Wear',
+  Give = 'Give',
+  Fight = 'Fight',
+  Dodge = 'Dodge',
+  Run = 'Run',
 }
 
-// ..\Models\DBOEnums.cs
+// ..\Models\Dbos\DboEnums.cs
 export enum ModelName {
-    User = 'User',
-    Location = 'Location',
-    Conversation = 'Conversation',
-    Dialogue = 'Dialogue',
-    Actions = 'Actions',
-    Hero = 'Hero',
+  User = 'User',
+  Location = 'Location',
+  Conversation = 'Conversation',
+  Dialogue = 'Dialogue',
+  Actions = 'Actions',
+  Hero = 'Hero',
 }
 
-// ..\Models\DBOHeroes.cs
-export interface DBOHeroes extends DBOBaseModel<IdTypeOFHero> {
-    Name: string;
-    LocationId: IdTypeOFLocation;
-    IsActive: boolean;
-    Location: DBOLocations;
+// ..\Models\Dbos\DboEnums.cs
+export enum UserRole {
+  Admin = 'Admin',
+  User = 'User',
 }
 
-// ..\Models\DBOLocations.cs
-export interface DBOLocations extends DBOBaseModel<IdTypeOFLocation> {
-    Name: string;
-    Description: string;
-    CanBeReused: boolean;
-    HasBeenUsed: boolean;
+// ..\Models\Dbos\DboHeroes.cs
+export interface DBOHeroes extends DboBaseModel<IdTypeOFHero> {
+  Name: string;
+  LocationId: IdTypeOFLocation;
+  IsActive: boolean;
+  Location: DBOLocations;
 }
 
-// ..\Models\DBOUsers.cs
-export interface DBOUsers extends DBOBaseModel<IdTypeOFUser> {
-    Email: string;
-    Password: string;
-    IsAdmin: boolean;
-    IsActive: boolean;
-    ConfirmPassword: string;
+// ..\Models\Dbos\DboLocations.cs
+export interface DBOLocations extends DboBaseModel<IdTypeOFLocation> {
+  Name: string;
+  Description: string;
+  CanBeReused: boolean;
+  HasBeenUsed: boolean;
 }
 
-// ..\Models\DialoguesToConversation.cs
-export interface DialoguesToConversation extends BaseDictionary {
+// ..\Models\Dbos\DboUsers.cs
+export interface DBOUsers extends DboBaseModel<IdTypeOFUser> {
+  Email: string;
+  Password: string;
+  IsAdmin: boolean;
+  IsActive: boolean;
+  PasswordHash: Uint8Array;
+  PasswordSalt: Uint8Array    ;
+  UserRole: UserRole;
 }
 
-// ..\Models\DTOAction.cs
-export interface DTOAction extends DTOBaseModel<IdTypeOFActions> {
-    Name: string;
-    FirstDescription: string;
-    SecondDescription: string;
-    ModelName: ModelName;
-    AvailableAction: AvailableActions;
-    TargetId: number;
+// ..\Models\Dictionaries\DictionaryActionsToConversation.cs
+export interface DictionaryActionsToConversation extends DictionaryBase {
 }
 
-// ..\Models\DTOBaseModel.cs
-export interface DTOBaseModel<T> {
-    Id: T;
-    CreatedDate: string;
-    ModifiedDate: string;
+// ..\Models\Dictionaries\DictionaryActionsToDialogues.cs
+export interface DictionaryActionsToDialogues extends DictionaryBase {
 }
 
-// ..\Models\DTOConversation.cs
-export interface DTOConversation extends DTOBaseModel<IdTypeOFConversation> {
-    Name: string;
-    Description: string;
-    CanBeReused: boolean;
-    HasBeenUsed: boolean;
-    Dialogues: DTODialogue[];
-    Actions?: DTOAction[];
+// ..\Models\Dictionaries\DictionaryActionsToLocation.cs
+export interface DictionaryActionsToLocation extends DictionaryBase {
 }
 
-// ..\Models\DTODialogue.cs
-export interface DTODialogue extends DTOBaseModel<IdTypeOFDialogue> {
-    Text: string;
-    CanBeReused: boolean;
-    HasBeenUsed: boolean;
-    Actions?: DTOAction[];
+// ..\Models\Dictionaries\DictionaryBase.cs
+export interface DictionaryBase {
+  DictionaryId: number;
+  From: number;
+  To: number;
 }
 
-// ..\Models\DTOHero.cs
-export interface DTOHero extends DTOBaseModel<IdTypeOFHero> {
-    Name: string;
-    LocationId: IdTypeOFLocation;
-    IsActive: boolean;
-    Location?: DBOLocations;
+// ..\Models\Dictionaries\DictionaryConversationsToLocation.cs
+export interface DictionaryConversationsToLocation extends DictionaryBase {
 }
 
-// ..\Models\DTOInteraction.cs
-export interface DTOInteraction {
-    FirstHeaderLine: string;
-    SecondHeaderLine: string;
-    ThirdHeaderLine: string;
-    ConsoleBody: string;
-    FirstInteractionLine: string;
-    SecondInteractionLine: string;
-    ThirdInteractionLine: string;
-    FourthInteractionLine: string;
-    UserInput: string;
+// ..\Models\Dictionaries\DictionaryDialoguesToConversation.cs
+export interface DictionaryDialoguesToConversation extends DictionaryBase {
 }
 
-// ..\Models\DTOLocation.cs
-export interface DTOLocation extends DTOBaseModel<IdTypeOFLocation> {
-    Name: string;
-    Description: string;
-    CanBeReused: boolean;
-    HasBeenUsed: boolean;
-    Conversations?: DBOConversations[];
-    Actions?: DTOAction[];
+// ..\Models\Dictionaries\DictionaryHeroesToUser.cs
+export interface DictionaryHeroesToUser extends DictionaryBase {
 }
 
-// ..\Models\DTOUser.cs
-export interface DTOUser {
-    Email: string;
-    Password: string;
-    UserType: UserType;
-    Heroes: DTOHero[];
-    Locations: DTOLocation[];
-    IsAuthorized: boolean;
+// ..\Models\Dtos\Requests\AuthenticateUserRequest.cs
+export interface AuthenticateUserRequest {
+  Email: string;
+  Password: string;
 }
 
-// ..\Models\DTOUser.cs
-export enum UserType {
-    User = 'User',
-    Admin = 'Admin',
+// ..\Models\Dtos\Requests\RegisterNewUserRequest.cs
+export interface RegisterNewUserRequest {
+  Email: string;
+  Password: string;
+  IsAdmin: boolean;
 }
 
-// ..\Models\HeroesToUser.cs
-export interface HeroesToUser extends BaseDictionary {
+// ..\Models\Dtos\Responds\AuthenticateUserResponse.cs
+export interface AuthenticateUserResponse {
+  UserId: IdTypeOFUser;
+  Email: string;
+  IsAdmin: boolean;
+  IsAuthenticated: boolean;
 }

@@ -1,0 +1,141 @@
+:root {
+  --main-color: #41a541;
+  --secondary-color: #2a692a;
+  --background-color: #000;
+  --border-color: #41a541;
+  --font-color: #797979;
+  --hover-color: #44cc44;
+}
+
+.navigation {
+  background-color: var(--background-color);
+  color: var(--main-color);
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+.navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.navigation .nav-item {
+  font-weight: 400 !important;
+  font-size: 2rem !important;
+}
+
+.navigation li {
+  margin-right: 20px
+}
+
+.admin {
+  display: none
+}
+
+.admin.active {
+  display: flex
+}
+
+.navigation a {
+  color: var(--main-color);
+  text-decoration: none
+}
+
+.navigation a:hover {
+  border-bottom: 2px solid var(--main-color)
+}
+
+.logout a {
+  color: var(--main-color);
+  text-decoration: none
+}
+
+.logout a:hover {
+  border-bottom: none
+}
+
+.logout i {
+  margin-right: 5px
+}
+
+div .in-game {
+  width: 640px;
+  height: 480px;
+  padding: 10px 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: var(--border-color);
+  border-style: dotted;
+  white-space: pre-line
+}
+
+span .home-screen {
+  display: block;
+  margin-bottom: 10px
+}
+
+.login-btn {
+  display: block;
+  margin: 0 auto
+}
+
+.form-group-account {
+  border: var(--border-color);
+  border-style: dotted;
+  padding: 10px 50px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 0px
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  padding: 10px 20px
+}
+
+.navigation a {
+  color: var(--main-color);
+  text-decoration: none
+}
+
+.navigation a:hover {
+  border-bottom: 2px solid var(--main-color)
+}
+
+@media (min-width: 768px) {
+  .navigation li {
+    margin-right: 40px
+  }
+}
+
+@media (min-width: 992px) {
+  .navigation li {
+    margin-right: 60px
+  }
+}
+
+@media (min-width: 1200px) {
+  .admin {
+    display: flex
+  }
+
+  ;
+
+  .logout {
+    margin-left: auto
+  }
+}
