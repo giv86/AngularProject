@@ -3,7 +3,7 @@ using Models.Dbo.Game;
 using Models.Dto.Model;
 using Services.Core;
 
-namespace Services;
+namespace Services.GameObjects;
 
 public class GameObjectService<T> : IGameObjectService where T : BaseGameFields, new()
 {

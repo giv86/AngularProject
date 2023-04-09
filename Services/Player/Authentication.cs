@@ -1,30 +1,19 @@
+using Models.Dto;
 using Models.Dto.User;
 using Services.Core;
 
-namespace Services.Player;
-
-public class Authentication
+namespace Services.Player
 {
-  private readonly NawiaDbContext _dbContext;
-
-  public Authentication(NawiaDbContext dbContext)
+  public class Authentication
   {
-    _dbContext = dbContext;
-  }
+    private readonly NawiaDbContext _dbContext;
 
-  public LoginRes? AuthenticateUser(LoginReq request)
-  {
-    var users = _dbContext.Users.ToList();
-
-    var user = users.FirstOrDefault(x => x.Username == Encryption.Encode(request.Username, x.Salt));
-    if (user == null
-        || user.Password != Encryption.Encode(request.Password, user.Salt)) return null;
-
-    return new LoginRes
+    public Authentication(NawiaDbContext dbContext)
     {
-      Username = request.Username,
-      Role = user.Role.ToString(),
-      IsAuthenticated = true
-    };
+      _dbContext = dbContext;
+    }
+
+   
+
   }
 }

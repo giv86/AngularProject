@@ -1,16 +1,15 @@
-namespace Models.Dto;
-
-public class BasicRes
+namespace Models.Dto
 {
-  public List<object>? Entities { get; set; }
+  public class BasicRes
+  {
+    public List<object>? Entities { get; set; }
 
-  public bool EntitiesHasAnyElement => Entities != null;
+    public bool EntitiesHasAnyElement => Entities?.Count > 0;
 
-  public bool IsSuccess => ServicesDictionary.All(x => x.Value);
+    public bool IsSuccess => ErrorsDictionary.Count == 0;
 
-  public bool HasErrors => !ErrorsDictionary.Any();
+    public Dictionary<string, bool> ServicesDictionary { get; set; } = new();
 
-  public Dictionary<string, bool> ServicesDictionary { get; set; } = new();
-
-  public Dictionary<string, string> ErrorsDictionary { get; set; } = new();
+    public Dictionary<string, string> ErrorsDictionary { get; set; } = new();
+  }
 }

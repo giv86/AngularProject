@@ -11,11 +11,10 @@ public class BaseController : Controller
   public Account ServiceAccount;
   public Authentication ServiceAuthentication;
 
-
   public BaseController(NawiaDbContext dbContext)
   {
     DbContext = dbContext;
-    ServiceAuthentication = new (dbContext);
-    ServiceAccount = new (dbContext);
+    ServiceAuthentication = new Authentication(dbContext);
+    ServiceAccount = new Account(dbContext);
   }
 }

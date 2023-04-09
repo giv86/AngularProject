@@ -3,7 +3,7 @@ using Models.Dto;
 using Models.Dto.Attachment;
 using Services.Core;
 
-namespace Services;
+namespace Services.Attachments;
 
 public class Attachment : IAttachmentService
 {

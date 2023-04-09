@@ -1,7 +1,7 @@
 using Models.Dto;
 using Models.Dto.Attachment;
 
-namespace Services;
+namespace Services.Attachments;
 
 public interface IAttachmentService
 {

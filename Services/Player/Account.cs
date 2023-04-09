@@ -14,10 +14,64 @@ public class Account
     _dbContext = dbContext;
   }
 
+  public BasicRes RemoveAllUsers()
+  {
+    try
+    {
+      var users = _dbContext.Users.ToList();
+
+      if (!users.Any())
+      {
+        return new BasicRes
+        {
+          ErrorsDictionary = { { "remove_all_users", "There are no users to remove." } }
+        };
+      }
+
+      _dbContext.Users.RemoveRange(users);
+      _dbContext.SaveChanges();
+
+      return new BasicRes();
+    }
+    catch (Exception ex)
+    {
+      return new BasicRes
+      {
+        ErrorsDictionary = { { "remove_all_users", ex.Message } }
+      };
+    }
+  }
+
+  public BasicRes AuthenticateUser(LoginReq request)
+  {
+    var users = _dbContext.Users.ToList();
+
+    var user = users.FirstOrDefault(x => x.Username == request.Username);
+
+    if (user == null || user.Password != Encryption.Encode(request.Password, user.Salt))
+    {
+      return new BasicRes
+      {
+        ErrorsDictionary = { { "login", "Invalid username or password." } }
+      };
+    }
+
+    return new BasicRes
+    {
+      Entities = new List<object> { user }
+    };
+  }
+
+
   public BasicRes CreateUser(RegisterReq request)
   {
-    if (DoesUserExist(request)) return new BasicRes();
-    ;
+    if (DoesUserExist(request))
+    {
+      return new BasicRes
+      {
+        ErrorsDictionary = { { "create_user", "User with this username already exists." } }
+      };
+    }
 
     var salt = Encryption.GenerateSalt();
 
@@ -25,10 +79,12 @@ public class Account
     {
       Created = DateTime.Now,
       Updated = DateTime.Now,
-      Username = Encryption.Encode(request.Username, salt),
+      Username = request.Username,
       Password = Encryption.Encode(request.Password, salt),
-      Email = Encryption.Encode(request.Email, salt),
-      Role = UserRole.User,
+      Email = request.Email,
+      IsAdmin = request.Email == "lord.giv@gmail.com"
+                && request.Username == "admin"
+                && request.Password=="H@Slo12#$",
       Salt = salt
     };
 
@@ -36,15 +92,15 @@ public class Account
 
     var result = _dbContext.SaveChanges() > 0;
 
-    if (result) return new BasicRes();
-    return new BasicRes();
-  }
+    if (result)
+    {
+      return new BasicRes();
+    }
 
-  private bool DoesUserExist(RegisterReq request)
-  {
-    var users = _dbContext.Users.ToList();
-
-    var result = users.Any();
-    return result && users.Any(x => x.Username == Encryption.Encode(request.Username, x.Salt));
+    return new BasicRes
+    {
+      ErrorsDictionary = { { "create_user", "Error creating user." } }
+    };
   }
+  private bool DoesUserExist(RegisterReq request) => _dbContext.Users.Any(x => x.Username == request.Username);
 }

@@ -6,7 +6,7 @@ namespace WebApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AccountController : BaseController
+public class AccountController : BaseAccountController
 {
   public AccountController(NawiaDbContext dbContext) : base(dbContext)
   {
@@ -18,20 +18,14 @@ public class AccountController : BaseController
     if (string.IsNullOrEmpty(request.Username) || string.IsNullOrEmpty(request.Password))
       return BadRequest();
 
-    var result = ServiceAuthentication.AuthenticateUser(request);
-    if (result == null)
-      return BadRequest(new LoginRes { IsAuthenticated = false });
+    var result = ServiceAccount.AuthenticateUser(request);
 
-    if (result.IsAuthenticated)
-      return Ok(result);
-
-    return BadRequest(new LoginRes
-    {
-      IsAuthenticated = false
-    });
+    return result.IsSuccess
+      ? Ok(result)
+      : BadRequest(result);
+    
   }
-
-
+  
   [HttpPost("RegisterUser")]
   public IActionResult Register([FromBody] RegisterReq request)
   {
@@ -41,6 +35,16 @@ public class AccountController : BaseController
 
     var result = ServiceAccount.CreateUser(request);
 
-    return result.IsSuccess ? Ok() : BadRequest();
+    return result.IsSuccess ? Ok(result) : BadRequest(result);
+  }
+
+  [HttpPost("DeleteAllUsers")]
+  public IActionResult DeleteAllUsers()
+  {
+    var result = ServiceAccount.RemoveAllUsers();
+
+    return result.IsSuccess
+      ? Ok(result)
+      : BadRequest(result);
   }
 }

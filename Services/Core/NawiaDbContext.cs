@@ -21,10 +21,5 @@ public class NawiaDbContext : DbContext
   public DbSet<Dialogue> Dialogues { get; set; }
   public DbSet<Location> Locations { get; set; }
 
-  public DbSet<Models.Dbo.Dictionaries.Attachment> ActionsDictionary { get; set; }
-  public DbSet<ConversationsToLocation> ConversationsToLocations { get; set; }
-  public DbSet<DialoguesToConversation> DialoguesToConversations { get; set; }
-  public DbSet<HeroesToUser> HeroesToUsers { get; set; }
-  public DbSet<LocationsToHero> LocationsToUsers { get; set; }
   public DbSet<Models.Dbo.Dictionaries.Attachment> Attachments { get; set; }
 }

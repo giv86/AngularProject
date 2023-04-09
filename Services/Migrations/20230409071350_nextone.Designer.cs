@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Services.Core;
 
@@ -10,9 +11,11 @@ using Services.Core;
 namespace Services.Migrations
 {
     [DbContext(typeof(NawiaDbContext))]
-    partial class NawiaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230409071350_nextone")]
+    partial class nextone
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

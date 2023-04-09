@@ -1,6 +1,6 @@
 using Models.Dto.Model;
 
-namespace Services;
+namespace Services.GameObjects;
 
 public interface IGameObjectService
 {

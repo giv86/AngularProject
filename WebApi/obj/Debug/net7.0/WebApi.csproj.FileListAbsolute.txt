@@ -6,6 +6,8 @@ C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\W
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\WebApi.dll
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\WebApi.pdb
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Humanizer.dll
+C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -16,6 +18,7 @@ C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\M
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\MySqlConnector.dll
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -46,6 +49,3 @@ C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\obj\Debug\net7.0\r
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\obj\Debug\net7.0\WebApi.pdb
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\obj\Debug\net7.0\WebApi.genruntimeconfig.cache
 C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\obj\Debug\net7.0\ref\WebApi.dll
-C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
-C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-C:\Users\Zygmunt\Desktop\Application\Application\Nawia\WebApi\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
